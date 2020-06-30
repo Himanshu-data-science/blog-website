@@ -1,11 +1,10 @@
 var router = require('express').Router();
 var home=require('../API/home');
-function hello(){
-console.log('HELLOOOOOOOO');
-next();
-}
-router.get('/home',hello,home.homeDash);
+
+
+router.get('/home',home.homeDash);
 module.exports = router;
+
 
 
 

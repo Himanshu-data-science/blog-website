@@ -19,11 +19,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-function himu(){
-  console.log('HEHEHE');
-  next();
-}
-app.use('/check',himu,require('./routes/index'))
+
+
+app.use('/auth',require('./routes/users'))
+app.use('/check',require('./routes/index'))
 // app.use('/users', usersRouter);
 // require('./routes/r-main');
 // catch 404 and forward to error handler
