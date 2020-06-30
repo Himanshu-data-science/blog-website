@@ -1,6 +1,6 @@
 var router = require('express').Router();
 var home=require('../API/home');
-function hello(){
+function hello(req,res,next){
 console.log('HELLOOOOOOOO');
 next();
 }

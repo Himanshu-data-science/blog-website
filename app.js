@@ -23,7 +23,7 @@ function himu(){
   console.log('HEHEHE');
   next();
 }
-app.use('/check',himu,require('./routes/index'))
+app.use('/check',require('./routes/index'))
 // app.use('/users', usersRouter);
 // require('./routes/r-main');
 // catch 404 and forward to error handler
