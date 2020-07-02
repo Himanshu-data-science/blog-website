@@ -4,12 +4,13 @@ var express = require('express'); //requirement-express
 var path = require('path');   //folders path show
 var cookieParser = require('cookie-parser');  //cookie
 var logger = require('morgan'); //testing-purpose
+var bodyParser = require('body-parser');
 
 // var indexRouter = require('./routes/index');  
 // var usersRouter = require('./routes/users');
 
 var app = express();
-
+var jsonParser = bodyParser.json();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -24,6 +25,7 @@ function himu(){
   next();
 }
 app.use('/check',require('./routes/index'))
+app.use('/auth',require('./routes/users'))
 // app.use('/users', usersRouter);
 // require('./routes/r-main');
 // catch 404 and forward to error handler

@@ -27,8 +27,23 @@ var server = http.createServer(app);
 
 const db=require('../models');
 db.sequelize.sync().then(()=>{
-  server.listen(port);
-})
+  db.permission.findOrCreate({where:{
+    type:'TYPE_USER'},
+    default:{
+      type:'TYPE_USER'
+    }
+  })
+}).then(()=>{
+    db.permission.findOrCreate({where:{
+      type:'TYPE_ADMIN'},
+      default:{
+        type:'TYPE_ADMIN'
+      }
+  })
+}).then(()=>{
+    server.listen(port);
+  })
+
 .catch(error=>{
   console.log('the error is',error);
 })

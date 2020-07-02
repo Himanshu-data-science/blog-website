@@ -33,10 +33,6 @@ module.exports=(sequelize,DataTypes)=>{
         },
         deleted_at:{
             type:DataTypes.DATE
-        },
-        permission_id:{
-            type:DataTypes.INTEGER,
-            required:true
         }
        
     },{
